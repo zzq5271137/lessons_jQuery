@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-jQuery加载模式对比</title>
+</head>
+<body>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+    /*
+     * window.onload(原生js):
+     * 执行时机: 所有DOM节点加载完毕之后执行, 包括图片、音频、视频等资源;
+     * 执行次数: 只会执行一次, 后面的=赋值会把前面的覆盖掉;
+     * 简写方案: 无;
+     */
+    // window.onload = function () {
+    //     console.log('1');
+    // };
+    // window.onload = function () {
+    //     console.log('2');
+    // };
+
+    /*
+     * $(document).ready():
+     * 执行时机: 所有DOM节点加载完毕之后执行, 不包括资源加载;
+     * 执行次数: 可执行多次, 不会覆盖;
+     * 简写方案: $(function() {
+     *
+     *         });
+     */
+    $(document).ready(function () {
+        console.log('1');
+    });
+    $(document).ready(function () {
+        console.log('2');
+    });
+    $(document).ready(function () {
+        console.log('3');
+    });
+    $(function () {
+        console.log('4');
+    });
+
+</script>
+
+</body>
+</html>

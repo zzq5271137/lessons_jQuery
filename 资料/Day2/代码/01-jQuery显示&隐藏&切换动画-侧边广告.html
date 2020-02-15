@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .ad{
+            background: url("images/ad.png") no-repeat;
+            width: 150px;
+            height: 300px;
+
+            position: fixed;
+            top: 50%;
+            margin-top: -150px;
+        }
+
+        .left{
+            left: 0;
+        }
+
+        .right{
+            right: 0;
+        }
+
+        .close{
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad left">
+        <img class="close" src="images/close.png" alt="">
+    </div>
+
+    <div class="ad right">
+        <img class="close" src="images/close.png" alt="">
+    </div>
+
+    <button id="show">显示</button>
+    <button id="hide">隐藏</button>
+    <button id="toggle">切换</button>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+         $('#show').click(function () {
+             $('.ad').show(1000, function () {
+                 console.log('显示完成!');
+             });
+         });
+
+        $('#hide').click(function () {
+            $('.ad').hide(1000, function () {
+                console.log('隐藏完成!');
+            });
+        });
+
+        $('#toggle').click(function () {
+            $('.ad').toggle(3000, function () {
+                console.log('切换完成!');
+            });
+        });
+
+        $('.close').click(function () {
+            $(this).parent().hide(1000, function () {
+                console.log('隐藏完成!');
+            });
+        })
+    });
+</script>
+</body>
+</html>

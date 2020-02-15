@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+   <div class="box"></div>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+   $(function () {
+       var $box = $('.box');
+       // 1. 自定义事件
+      /* $box.on('abc', function () {
+           alert('abc');
+       });
+       $box.trigger('abc');*/
+
+      // 2. 命名空间
+       $box.on('click.one', function (event) {
+           console.log(event.type);
+           console.log(1);
+       });
+
+       $box.on('click.two', function () {
+           console.log(event.type);
+           console.log(2);
+       });
+
+       $box.off('.one');
+   });
+</script>
+</body>
+</html>

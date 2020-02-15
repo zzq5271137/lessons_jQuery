@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-jQuery中的自定义动画-下</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: gold;
+        }
+
+    </style>
+</head>
+<body>
+<button>自定义动画</button>
+<button>结束</button>
+<div class="box"></div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $box = $('.box');
+        var $btn = $('button');
+
+        /*
+        // 可以使用一些预设值
+        $btn.eq(0).click(function () {
+            $box.animate({
+                height: 'toggle'
+            });
+        });
+         */
+
+        $btn.eq(0).click(function () {
+            $box.animate({
+                height: '300px',
+                opacity: '0.4'
+            }, 'slow').animate({
+                width: '300px',
+                opacity: '0.8'
+            }, 'slow').animate({
+                height: '100px',
+                opacity: '0.4'
+            }, 'slow').animate({
+                width: '100px',
+                opacity: '0.8'
+            }, 'slow');
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+   <a href="http://www.itlike.com">撩课学院</a>
+
+   <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+   <script type="text/javascript">
+       $(function () {
+           $('a').on('click', function (event) {
+                // 阻止默认事件
+               event.preventDefault();
+               alert('哈哈哈哈');
+           });
+       });
+   </script>
+</body>
+</html>

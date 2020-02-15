@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">改变宽度</button>
+    <div class="box"></div>
+
+
+<!--<script type="text/javascript" src="js/jquery-3.3.1.js"></script>-->
+<script src="js/zepto.js"></script>
+<script src="js/fx.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#btn').on('click', function () {
+            $('.box').animate({
+                width: '800px'
+            }, 1000)
+        })
+    });
+</script>
+</body>
+</html>

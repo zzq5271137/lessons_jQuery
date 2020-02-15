@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">改变颜色</button>
+    <div id="box"></div>
+
+<script src="lib/zepto.js"></script>
+<script src="lib/touch.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#btn').tap(function () {
+            $('#box').css({
+                backgroundColor: 'green'
+            });
+        });
+    });
+</script>
+</body>
+</html>

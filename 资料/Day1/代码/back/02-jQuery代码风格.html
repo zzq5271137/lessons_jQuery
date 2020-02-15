@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-jQuery代码风格</title>
+</head>
+<body>
+
+  <p>双十一狂欢节</p>
+  <button class="btn" id="btn">来吧</button>
+<script src="lib/jquery-3.3.1.js"></script>
+<script>
+    /*
+      在jQuery程序中,不管是页面元素的选择、内置的功能函数的调用,都是美元符号“$”来起始的。
+      而这个“$”就是jQuery当中最重要且独有的  jQuery 函数
+    */
+
+    /*window.onload = function () {
+        $('#btn').on('click', function () {
+             $('p').html('我只想学习!');
+        });
+    }*/
+
+   /* window.onload = function () {
+        $('#btn').on('click', function () {
+            $('p').html('我只想学习!');
+        });
+    };*/
+
+    $(function () {
+        alert(0);
+    });
+</script>
+</body>
+</html>

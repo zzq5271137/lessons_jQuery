@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        body {
+            background-image: url("images/body_bg.jpg");
+        }
+
+        .box {
+            width: 700px;
+            margin: 100px auto;
+        }
+
+        .input {
+            width: 700px;
+            height: 200px;
+            border: 1px solid #cccccc;
+            background-color: white;
+            border-radius: 6px;
+        }
+
+        .input .content {
+            width: 690px;
+            height: 150px;
+            margin: 5px;
+            box-sizing: border-box;
+            border: 1px solid gray;
+            resize: none;
+            outline: none;
+            padding: 10px;
+        }
+
+        .input .submit {
+            width: 100px;
+            height: 30px;
+            float: right;
+            background: orangered;
+            color: white;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .dataList {
+            width: 600px;
+            margin: 50px auto;
+        }
+
+        .dataList > ul > li {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            color: slategray;
+            background: lightblue;
+            margin-bottom: 5px;
+            border-radius: 40px;
+            text-indent: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="input">
+        <textarea class="content"></textarea>
+        <button class="submit">发布</button>
+    </div>
+    <div class="dataList">
+        <ul>
+            <li>今天的天气很好呀!</li>
+            <li>今天的天气很好呀!</li>
+            <li>今天的天气很好呀!</li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $content = $('.content');
+        // 1. 监听按钮点击
+        $('.submit').click(function () {
+            // 1.1 获取输入框的内容
+            var content = $content.val();
+            // alert(content);
+            // 1.2 容错
+            if ($.trim(content).length <= 0) {
+                alert('请输入内容');
+                // 1.3 清空输入框的内容 输入框获取焦点
+                $content.val('');
+                $content.focus();
+                return;
+            }
+            // 1.3 取出内容, 创建一个新的节点
+            var $newLi = $('<li>' + content + '</li>');
+           /* $newLi.click(function () {
+                $(this).animate({
+                    width: '0'
+                }, 1000, function () {
+                    $(this).remove();
+                })
+            });*/
+
+            var $ul = $('.dataList>ul');
+            $newLi.prependTo($ul);
+
+            // 1.4 追加动画的效果
+            $newLi.hide();
+            $newLi.slideDown(500);
+
+            $content.val('');
+            $content.focus();
+        });
+
+        // 2. 监听li的点击, 并且, 删除
+       /* $('.dataList>ul>li').click(function () {
+             $(this).animate({
+                 width: '0'
+             }, 1000, function () {
+                 $(this).remove();
+             })
+        });*/
+
+        $('.dataList>ul').on('click', 'li', function () {
+            $(this).animate({
+                width: '0'
+            }, 1000, function () {
+                $(this).remove();
+            })
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-jQuery操作css-尺寸</title>
+    <style>
+        #box {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 2px solid #000;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+<!--
+    width()
+        设置或返回元素的宽度（不包括内边距、边框或外边距）
+    height()
+        设置或返回元素的高度（不包括内边距、边框或外边距）
+    innerWidth()
+        返回元素的宽度（包括内边距）
+    innerHeight()
+        返回元素的高度（包括内边距）
+    outerWidth()
+        返回元素的宽度（包括内边距和边框）
+    outerHeight()
+        返回元素的高度（包括内边距和边框）
+    outerWidth(true)
+        返回元素的宽度（包括内边距、边框和外边距）
+    outerHeight(true)
+        返回元素的高度（包括内边距、边框和外边距）
+    案例演示
+        创建一个div, 设置内边距, 外边距, 边框; 分别打印以上属性
+-->
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $box = $('#box');
+        console.log($box.width());
+        console.log($box.height());
+
+        console.log($box.innerWidth());
+        console.log($box.innerHeight());
+
+        console.log($box.outerWidth());
+        console.log($box.outerHeight());
+
+        console.log($box.outerWidth(true));
+        console.log($box.outerHeight(true));
+    });
+</script>
+
+</body>
+</html>

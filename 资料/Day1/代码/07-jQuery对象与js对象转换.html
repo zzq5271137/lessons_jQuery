@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="box">撩课学院</div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // 1. js操作
+        var div = document.getElementById('box');
+        var $div = $('#box');
+        console.log(div);
+        console.log($div);
+
+        // 2. 两者不可以互相调用对方的方法
+        // console.log(div.innerHTML);
+        // console.log($div.innerHTML);
+
+        // console.log($div.html());
+        // console.log(div.html());
+
+        // 3. 转化
+        // js -> jq
+        var $divChange = $(div);
+        console.log($divChange.html());
+
+        // jq -> js
+        var divChange = $div.get(0);
+        console.log(divChange.innerHTML);
+
+
+    });
+</script>
+</body>
+</html>

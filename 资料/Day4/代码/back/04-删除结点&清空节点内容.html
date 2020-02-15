@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 300px;
+            margin: 100px auto;
+            border: 1px solid orangered;
+        }
+
+        .red{
+            background-color: red;
+        }
+
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <ul class="red">
+        <li>red1<input type="date"><span>撩课学院</span></li>
+        <li>red2</li>
+        <li>red3</li>
+        <li>red4</li>
+        <li>red5</li>
+        <li>red6</li>
+        <li>red7</li>
+        <li>red8</li>
+    </ul>
+    <ul class="green">
+        <li>green1</li>
+        <li>green2</li>
+        <li>green3</li>
+        <li>green4</li>
+        <li>green5</li>
+        <li>green6</li>
+        <li>green7</li>
+        <li>green8</li>
+    </ul>
+</div>
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+          $(document).click(function () {
+              // $('.red>li:first').remove();
+              // $('.red>li:first').empty();
+              // $('.red>li:first').html('');
+          });
+    });
+</script>
+</body>
+</html>

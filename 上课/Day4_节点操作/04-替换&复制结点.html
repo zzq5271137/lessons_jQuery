@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-替换&复制结点</title>
+    <style>
+        p {
+            height: 40px;
+            background: green;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<p>
+    <input type="date">
+    <span>ZzqGo!(木大木大！)</span>
+</p>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        /*
+            tag1.replaceWith(tag2): 把tag1标签替换成tag2标签
+
+            tag.clone(varBool): 复制tag标签.
+	        参数说明:
+                当参数为false时代表只复制标签,不包括标签绑定的事件.
+                当参数为true时代表不仅复制标签,连同里面的事件一起复制
+                如果没有传递参数,代表为false
+         */
+        $('p:first').click(function (event) {
+            event.stopPropagation();
+            alert('1111');
+        });
+
+        $(document).click(function () {
+            // 替换节点
+            // var $newTag = $('<h1>哈哈哈</h1>');
+            // $('p').replaceWith($newTag);
+
+            // 复制节点
+            // var $newTag = $('p:first').clone(); // 浅复制(不会复制绑定的事件)
+            var $newTag = $('p:first').clone(true);
+            $('body').append($newTag);
+        });
+    });
+</script>
+
+</body>
+</html>

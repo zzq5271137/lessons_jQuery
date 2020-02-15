@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<form action="http://www.itlike.com">
+    <input type="submit">
+</form>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+         var $submit = $(':submit');
+         $submit.on('click', function () {
+             alert('提交');
+         });
+
+         // $submit.trigger('click');
+
+        $submit.triggerHandler('click');
+    });
+</script>
+</body>
+</html>

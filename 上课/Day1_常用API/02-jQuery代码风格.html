@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-jQuery代码风格</title>
+</head>
+<body>
+
+<p>圣诞节!</p>
+<button class="btn" id="btn">来吧!</button>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+    window.onload = function () {
+        $('#btn').on('click', function () {
+            $('p').html('狂欢吧！学个P！')
+        });
+    };
+
+    $(function () {
+        alert(0);
+    })
+
+</script>
+
+</body>
+</html>

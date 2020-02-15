@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-自动触发事件</title>
+</head>
+<body>
+<form action="http://www.baidu.com">
+    <input type="submit">
+</form>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $submit = $(':submit');
+
+        $submit.on('click', function () {
+            alert('提交');
+        });
+
+        setTimeout(function () {
+            // trigger会触发默认事件(表单的提交), 还会触发自己写的事件
+            // $submit.trigger('click');
+
+            // triggerHandler不会触发默认事件
+            $submit.triggerHandler('click');
+        }, 1000);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            width: 100px;
+            height: 200px;
+            background-color: red;
+        }
+
+        span{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+   <div id="box">
+       <span class="king">小王</span>
+       <span class="black">小黑</span>
+       <p>哈哈哈</p>
+   </div>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+   $(function () {
+      /* $('span').click(function () {
+           alert('点击了span');
+       });*/
+
+       $('div').on('click', 'span', function (event) {
+           alert(event.target.className);
+       });
+   });
+</script>
+</body>
+</html>

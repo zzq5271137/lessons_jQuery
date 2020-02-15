@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-添加节点</title>
+    <style>
+        #box {
+            width: 300px;
+            margin: 100px auto;
+            border: 1px solid orange;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul class="red">
+        <li>red1</li>
+        <li>red2</li>
+        <li>red3</li>
+        <li>red4</li>
+        <li>red5</li>
+        <li>red6</li>
+        <li>red7</li>
+        <li>red8</li>
+        <li>red9</li>
+        <li>red10</li>
+    </ul>
+
+    <ul class="green">
+        <li>green1</li>
+        <li>green2</li>
+        <li>green3</li>
+        <li>green4</li>
+        <li>green5</li>
+        <li>green6</li>
+        <li>green7</li>
+        <li>green8</li>
+        <li>green9</li>
+        <li>green10</li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $newTag = $('<li>新增的节点</li>');
+
+        // 父子关系(内部添加)
+        // 追加相同节点, 前面的会被后面的覆盖掉(一个节点只能被插到一个地方)
+        // $('.red').append($newTag);
+        // $newTag.appendTo($('.red'));
+        // $('.red').prepend($newTag);
+        // $newTag.prependTo($('.red'));
+
+        // 兄弟关系(外部添加)
+        // $('.red').before($newTag);
+        // $newTag.insertBefore($('.red'));
+        // $('.red').after($newTag);
+        $newTag.insertAfter($('.red'));
+    });
+</script>
+
+</body>
+</html>

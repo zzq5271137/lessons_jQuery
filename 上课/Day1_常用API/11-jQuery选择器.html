@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-jQuery选择器</title>
+</head>
+<body>
+<!--基本选择器-->
+<div id="id">id选择器内容</div>
+<div class="class">class选择器内容1</div>
+<div class="class">class选择器内容2</div>
+<p>元素选择器1</p>
+<p>元素选择器2</p>
+
+<!--层级选择器-->
+<ul id="box1">
+    <li>0001</li>
+    <li>0002</li>
+    <li>0003</li>
+    <li class="test1">0004</li>
+    <li>0005</li>
+    <li>0006</li>
+    <li>0007</li>
+    <li>0008</li>
+    <li>0009</li>
+    <li>0010</li>
+    <ul id="box2">
+        <li>1111</li>
+        <li>2222</li>
+    </ul>
+</ul>
+<div>div1</div>
+<div>div2</div>
+<p id="x">hhhh</p>
+
+<!--属性选择器-->
+<a href="http://www.baidu.com">百度一下</a>
+<a href="http://www.itlike.com">撩课学院1</a>
+<a href="http://www.itlike.com">撩课学院2</a>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // 基本选择器
+        // baseSelector();
+        
+        // 层级选择器
+        // levelSelector();
+        
+        // 筛选选择器
+        // filterSelector();
+
+        // 属性选择器
+        attrSelector();
+    });
+
+    function baseSelector() {
+        $('#id').css({
+            'background-color': 'red',
+        });
+
+        // $('.class').css({
+        //     'background-color': 'green',
+        // });
+
+        // $('.class:eq(0)').css({
+        //     'background-color': 'yellow',
+        // });
+
+        $('.class').eq(0).css({
+            'background-color': 'yellow',
+        });
+
+        $('p').css({
+            'background-color': 'gold',
+        });
+    }
+    
+    function levelSelector() {
+        $('#box1 li').css({
+            'color': 'red',
+        });
+
+        $('#box1>li').css({
+            'color': 'green',
+        });
+
+        $('#box1+div').css({
+            'font-size': '100px',
+            'color': 'purple',
+        });
+
+        $('#box1~div').css({
+            'font-size': '70px',
+            'color': 'gold',
+        });
+    }
+    
+    function filterSelector() {
+        // $('#box1 li:odd').css('background-color','yellow');
+        // $('#box1 li:even').css('background-color','skyblue');
+
+        // $('#box1 li:gt(5)').css('background-color','yellow');
+        // $('#box1 li:eq(5)').css('background-color','red');
+        // $('#box1 li:lt(5)').css('background-color','skyblue');
+
+        // $('#box2').parent().css('background-color','yellow');
+        // $('#box2').children().css('background-color','yellow');
+
+        $('.test1').siblings().css('background-color','yellow');
+    }
+
+    function attrSelector() {
+        $('a[href*="itlike"]').css('font-size', '100px');
+    }
+
+</script>
+
+</body>
+</html>

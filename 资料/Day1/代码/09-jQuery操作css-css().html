@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <p></p>
+    <p></p>
+
+    <button id="get_style">获取样式</button>
+    <button id="set_style">设置样式</button>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+             // 0. 获取需要的标签
+             var $box = $('#box');
+
+             // 1. 获取样式
+            $('#get_style').click(function () {
+                 var w  = $box.css('width');
+                 var h  = $box.css('height');
+                 var bg = $box.css('background-color');
+                 console.log('宽度:' + w + 'px, 高度: ' + h + 'px, 背景颜色:' + bg);
+            });
+
+            // 2. 设置样式
+            $('#set_style').click(function () {
+                // 方式1
+               /*
+                $box.css('width', '300px');
+                $box.css('height', '300px');
+                $box.css('background-color', 'yellow');
+                */
+
+               // 方式2
+                // $box.css('width', '300px').css('height', '300px').css('background-color', 'purple');
+
+                // 方式3
+                $box.css({
+                    'width': '400px',
+                    'height': '400px',
+                    'background-color': 'blue'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

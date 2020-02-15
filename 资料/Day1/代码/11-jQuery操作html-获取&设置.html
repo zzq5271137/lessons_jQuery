@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="box">
+        <p id="content">内容</p>
+        <span>哈哈哈哈</span>
+    </div>
+    <input type="text" id="name" value="itLike">
+    <a href="http://www.itlike.com" target="_blank">撩课学院</a>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+         // 1. 获取标签中的内容
+        getContent();
+
+        // 2. 设置标签中的内容
+        setContent();
+
+        // 3. 设置标签中属性的值
+        setAttribute();
+    });
+
+    function getContent() {
+        var $box = $('#box');
+
+        // 1. 获取内容
+        var text = $box.text();
+        console.log(text);
+
+        // 2. 获取标签和内容
+        var html = $box.html();
+        console.log(html);
+
+        // 3. 获取输入框的内容
+        var content = $('#name').val();
+        console.log(content);
+
+        // 4. 获取标签的属性值
+        var href = $('a').attr('target');
+        console.log(href);
+    }
+    function setContent() {
+        var $box = $('#box');
+        // $box.text('撩课学院');
+        // $box.html('<h1>喜欢IT!</h1>');
+        // $('#name').val('这是输入框');
+
+        $box.text(function (index, oldValue) {
+            return index + oldValue + ',哈哈哈哈';
+        })
+    }
+    function setAttribute() {
+        // $('a').attr('href', 'http://www.baidu.com');
+        $('a').attr({
+            'href': 'http://www.baidu.com',
+            'target': '_self'
+        })
+    }
+</script>
+</body>
+</html>

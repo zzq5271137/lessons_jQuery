@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-jQuery操作html-获取&设置</title>
+</head>
+<body>
+<div id="box">
+    <p id="content">内容</p>
+    <span>哈哈哈</span>
+</div>
+<input type="text" id="name" value="zzq">
+<a href="http://www.itlike.com" target="_blank">撩课学院</a>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // 获取标签中的内容
+        getContent();
+
+        // 设置标签中的内容
+        setContent();
+
+        // 设置标签中属性的值
+        setAttribute();
+    });
+
+    function getContent() {
+        var $box = $('#box');
+
+        // 获取内容
+        var text = $box.text();
+        console.log(text);
+
+        // 获取标签和内容
+        var html = $box.html();
+        console.log(html);
+
+        // 获取输入框的内容
+        var content = $('#name').val();
+        console.log(content);
+
+        // 获取标签的属性值
+        var href = $('a').attr('href');
+        console.log(href);
+    }
+
+    function setContent() {
+        var $box = $('#box');
+
+        // 设置内容
+        $box.text('ZzqGo!');
+
+        // 设置标签和内容
+        $box.html('<h1>ZzqGoGo!</h1>');
+
+        // 设置输入框的内容
+        $('#name').val('ZzqGoGo!');
+
+        // 带回调的设置(可以获取原来的值)
+        $box.html(function (index, oldValue) {
+            return '<h1>' + index + '</h1>' + oldValue + '<h1>hhhh</h1>';
+        });
+    }
+
+    function setAttribute() {
+        // 设置单个
+        // $('a').attr('href', 'http://www.baidu.com');
+
+        // 设置多个
+        $('a').attr({
+            'href': 'http://www.baidu.com',
+            'target': '_self',
+        });
+    }
+
+</script>
+
+</body>
+</html>

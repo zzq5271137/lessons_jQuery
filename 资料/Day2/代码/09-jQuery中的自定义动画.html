@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 300px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <button>自定义动画</button>
+    <button>结束</button>
+   <div class="box"></div>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+   $(function () {
+       // 1. 获取标签
+       var $box = $('.box');
+       var $btn = $('button');
+
+       // 2. 监听按钮的点击
+       $btn.eq(0).click(function () {
+           /*$box.animate({
+               width: '500px',
+               height: '500px',
+                // backgroundColor: 'red' // X
+           }, 1000, function () {
+               console.log('动画结束!')
+           })*/
+
+          /* $box.animate({
+               width: '+=30px',
+               height: '+=50px'
+           }, 1000, function () {
+               console.log('动画结束!')
+           })*/
+
+           $box.delay(100).animate({
+               width: '500px',
+               height: '500px'
+           }, 2000, function () {
+               console.log('动画结束!')
+           });
+
+           $btn.eq(1).click(function () {
+              $box.stop(true, true)
+           });
+       });
+   });
+</script>
+</body>
+</html>

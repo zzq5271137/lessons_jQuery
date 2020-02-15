@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-jQuery解决冲突noConflict-当jQuery内部的jQuery被其他函数库覆盖</title>
+    <style>
+        div {
+            background-color: gold;
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+
+<p></p>
+<p></p>
+
+<button id="btn1">隐藏</button>
+<button id="btn2">改变颜色</button>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/other_lib.js"></script>
+<script type="text/html">
+    // 解决方式一: 用"jQuery"代替原来jQuery中的"$"
+    jQuery(function () {
+    jQuery('#btn1').on('click', function () {
+    jQuery('#div1').hide('slow');
+    });
+
+    jQuery('#btn2').on('click', function () {
+    jQuery('#div2').css('background', 'blue');
+    jQuery('#div3').css('background', 'green');
+    });
+    });
+
+    console.log($);
+</script>
+<script type="text/javascript">
+    // 解决方式二: 采用封闭作用域
+    (function ($) {
+        $(function () {
+            $('#btn1').on('click', function () {
+                $('#div1').hide('slow');
+            });
+
+            $('#btn2').on('click', function () {
+                $('#div2').css('background', 'blue');
+                $('#div3').css('background', 'green');
+            });
+        });
+    })(jQuery);
+
+    console.log($);
+</script>
+
+</body>
+</html>

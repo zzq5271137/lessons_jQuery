@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-删除结点&清空节点内容</title>
+    <style>
+        #box {
+            width: 300px;
+            margin: 100px auto;
+            border: 1px solid orange;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul class="red">
+        <li>
+            red1
+            <input type="date">
+            <span>ZzqGo!</span>
+        </li>
+        <li>red2</li>
+        <li>red3</li>
+        <li>red4</li>
+        <li>red5</li>
+        <li>red6</li>
+        <li>red7</li>
+        <li>red8</li>
+        <li>red9</li>
+        <li>red10</li>
+    </ul>
+
+    <ul class="green">
+        <li>green1</li>
+        <li>green2</li>
+        <li>green3</li>
+        <li>green4</li>
+        <li>green5</li>
+        <li>green6</li>
+        <li>green7</li>
+        <li>green8</li>
+        <li>green9</li>
+        <li>green10</li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        /*
+            把指定的节点删除: $(tag).remove()
+            清空选择元素当中的所有内容,内部有标签连标签一起清空.没有标签,直接清空文字: $(tag).empty()
+         */
+        // $('.red>li:first').remove();
+        // $('.red>li:first').empty();
+        $('.red>li:first').html('');
+    });
+</script>
+
+</body>
+</html>

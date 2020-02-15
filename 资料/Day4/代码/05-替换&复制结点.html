@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p{
+            height: 40px;
+            background: green;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+   <p>
+       <input type="date">
+       <span>喜欢IT, 就上撩课(itLike.com)</span>
+   </p>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+   $(function () {
+       $('p:first').click(function (event) {
+           event.stopPropagation();
+           alert('哈哈哈哈');
+       });
+
+       $(document).click(function () {
+           // 替换节点
+           // var $newTag = $('<h1>哈哈哈哈</h1>');
+           // $('p').replaceWith($newTag);
+
+           // 复制节点
+           /*var $newTag = $('p:first').clone();
+           $('body').append($newTag);*/
+
+           var $newTag = $('p:first').clone(true);
+           $('body').append($newTag);
+       });
+   });
+</script>
+</body>
+</html>

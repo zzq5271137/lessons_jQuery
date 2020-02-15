@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+   <button>事件</button>
+   <div></div>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+   $(function () {
+       $('button').click({name: '撩课'},function (event) {
+           // alert(0);
+           /*事件的类型*/
+           console.log(event.type);
+           /*事件所在的标签*/
+           console.log(event.target);
+           /*事件传递的数据*/
+           console.log(event.data['name']);
+       });
+
+     /*  $('div').on('click mouseenter', {'name': '撩课'}, function (event) {
+           /!*事件的类型*!/
+           console.log(event.type);
+           /!*事件所在的标签*!/
+           console.log(event.target);
+           /!*事件传递的数据*!/
+           console.log(event.data['name']);
+       });*/
+
+      /* $('div').on({
+           'click': function (event) {
+               console.log('--------------click事件被触发了----------');
+               /!*事件的类型*!/
+               console.log(event.type);
+               /!*事件所在的标签*!/
+               console.log(event.target);
+           },
+           'mouseenter': function (event) {
+               console.log('--------------mouseenter事件被触发了----------');
+               /!*事件的类型*!/
+               console.log(event.type);
+               /!*事件所在的标签*!/
+               console.log(event.target);
+           }
+       })*/
+
+      $('div').click(function (event) {
+          alert('第一个函数');
+          return '哈哈哈哈';
+      });
+
+       $('div').click(function (event) {
+           alert('第二个函数');
+           alert(event.result);
+       });
+   });
+</script>
+</body>
+</html>

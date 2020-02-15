@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-jQuery对象与js对象转换</title>
+</head>
+<body>
+<div id="box">ZzqGo!</div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // 原生js的对象
+        var div = document.getElementById('box');
+        console.log(div);
+
+        // jQuery对象
+        var $div = $('#box');
+        console.log($div);
+
+        // 两者不可以互相调用对方的方法
+        // console.log(div.innerHTML);
+        // console.log($div.innerHTML);
+        // console.log($div.html());
+        // console.log(div.html());
+
+        // 对象的转化
+        // 原生js对象转成jQuery对象
+        var $divChange = $(div);
+        console.log($divChange.html());
+
+        // jQuery对象转成原生js对象
+        // var divChange = $div.get(0);
+        var divChange = $div[0];
+        console.log(divChange.innerHTML);
+    });
+</script>
+
+</body>
+</html>

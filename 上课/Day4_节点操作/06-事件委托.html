@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-事件委托</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        span {
+            width: 50px;
+            height: 50px;
+            background-color: gold;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <span class="king">小王</span>
+    <span class="black">小黑</span>
+    <p>哈哈哈</p>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        /*
+        $('span').click(function () {
+            alert('11111')
+        });
+         */
+
+        // 事件委托给父标签
+        $('div').on('click', 'span', function (event) {
+            alert(event.target.className);
+        });
+    });
+</script>
+
+</body>
+</html>

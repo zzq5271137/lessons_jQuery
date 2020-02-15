@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // 1. JS中的遍历
+        /* var item = ['张三', '李四', '王五'];
+         for(var i=0, len = item.length; i<len; i++){
+             console.log(item[i]);
+         }*/
+
+        // 2. jQuery中遍历
+        // var item = ['张三', '李四', '王五'];
+        /*$.each(item, function (index, value) {
+            console.log(index + ':' + value);
+        })*/
+
+        /* $(item).each(function (index, value) {
+             console.log(index + ':' + value);
+         })*/
+
+
+        // 3. 对象的遍历
+        // var obj = {name: '撩课学院', intro: '喜欢IT, 就上撩课(itlike.com)', website: 'itlike.com'};
+      /*  $(obj).each(function (index, value) {
+            console.log(index + ':' + value);
+        })*/
+
+      /*$.each(obj, function (index, value) {
+          console.log(index + ':' + value);
+      })*/
+
+      // 4. 伪数组
+       // 不是数组, 本质是对象
+       // 有length属性
+       //  有length值-1属性
+       /* var item = ['张三', '李四', '王五'];
+        var fadeArr = {0: '张三', 1: 18, length: 2};
+        // console.log(fadeArr);
+        // console.log(item);
+
+        $.each(fadeArr, function (index, value) {
+            console.log(index + ':' + value);
+        });
+
+        $(fadeArr).each(function (index, value) {
+            console.log(index + ':' + value);
+        })*/
+
+        var $lis = $('li');
+        $.each($lis, function (index, value) {
+            $(this).slideUp(2000);
+            console.log(index + ':' + value);
+        });
+
+        $lis.each(function (index, value) {
+            console.log(index + ':' + value);
+        })
+    });
+</script>
+</body>
+</html>

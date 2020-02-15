@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-自定义事件,命名空间,取消事件</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $box = $('.box');
+
+        /*
+        // 自定义事件, 必须手动触发(trigger)
+        $box.on('myEvent', function () {
+            alert('myEvent触发了');
+        });
+        $box.trigger('myEvent');
+         */
+
+        // 事件的命名空间(相当于给事件添加了一个标识)
+        $box.on('click.one', function (event) {
+            console.log(event.type);
+            console.log('one');
+        });
+        $box.on('click.two', function (event) {
+            console.log(event.type);
+            console.log('two');
+        });
+        $box.off('.one');
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-大屏焦点图-节点操作</title>
+    <style>
+        * {padding: 0;margin: 0;list-style: none;}
+        .box {
+            width: 520px;height: 280px;margin: 100px auto;
+            border: 1px solid #cccccc;overflow: hidden;
+        }
+        .box>ul {position: relative;}
+        .box>ul>li {position: absolute;left: 0;top: 0;}
+        .box>ul>li>img {width: 520px;height: 280px;}
+    </style>
+</head>
+<body>
+
+
+<div class="box">
+    <ul>
+        <li><img src="images/01.jpg"></li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        /*
+          要求:
+          点击浏览器左侧, 则, 展示左边一个图片,
+          点击浏览器右侧, 展示右边一个图片
+          越界循环
+        */
+        // 1. 准备数据源
+        var imageNames = [];
+        for(var i=1; i<5; i++){
+            imageNames.push('images/0' + i + '.jpg');
+        }
+        // console.log(imageNames);
+
+        // 2. 设置当前的索引
+        var currentShowImgIndex = 0;
+
+        // 3. 监听点击
+        $(document).click(function (event) {
+            // 3.1 变量
+            var middleX = $(window).width() * 0.5;
+            var isLeft = false;
+
+            // 3.2 判断
+            // console.log(event.pageX);
+            if(event.pageX <= middleX){ // 左边
+                 currentShowImgIndex = (currentShowImgIndex -1 + imageNames.length) % imageNames.length;
+                 isLeft = true;
+            }else { // 右边
+                currentShowImgIndex = (currentShowImgIndex + 1) % imageNames.length;
+                isLeft = false;
+            }
+
+            // 3.3 创建节点, 放在ul的最前面
+            var imageName = imageNames[currentShowImgIndex];
+            var $newTag = $('.box>ul>li').clone();
+            $newTag.children('img').attr('src', imageName);
+            $('.box>ul').prepend($newTag);
+
+            // 3.4 动画的展示和删除
+            if(isLeft){
+               $('.box>ul>li:last').animate({
+                   left: '-520px'
+               }, 200, function () {
+                   $(this).remove();
+               });
+            }else {
+                $('.box>ul>li:last').animate({
+                    left: '520px'
+                }, 200, function () {
+                    $(this).remove();
+                });
+            }
+            console.log(currentShowImgIndex);
+        });
+
+    });
+</script>
+</body>
+</html>

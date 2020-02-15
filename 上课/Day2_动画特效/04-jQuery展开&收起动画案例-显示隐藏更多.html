@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-jQuery展开&收起动画案例-显示隐藏更多</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 450px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .box ul {
+            overflow: hidden;
+        }
+
+        .box ul > li {
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            float: left;
+        }
+
+        .box button {
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #909EAB;
+            text-align: center;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>香蕉</li>
+        <li>苹果</li>
+        <li>梨子</li>
+        <li>猕猴桃</li>
+        <li>橙子</li>
+        <li>桃子</li>
+        <li>哈密瓜</li>
+        <li>西红柿</li>
+        <li>西瓜</li>
+        <li>荔枝</li>
+        <li>榴莲</li>
+        <li>人生果</li>
+    </ul>
+    <button>显示更多</button>
+</div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // 1. 设置默认的隐藏
+        $('.box>ul>li:gt(2)').hide();
+
+        // 2. 监听按钮的点击
+        $('.box>button').click(function () {
+            // 2.1 改变文字
+            var text = $(this).text() === '显示更多' ? '隐藏' : '显示更多';
+            $(this).text(text);
+
+            // 2.2 切换
+            $('.box>ul>li:gt(2)').slideToggle();
+        });
+    });
+</script>
+</body>
+</html>

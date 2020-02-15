@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-each遍历</title>
+</head>
+<body>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        /*
+        // 原生js的遍历方式
+        var item = ['张三', '李四', '王五'];
+        for (var i = 0, len = item.length; i < len; i++) {
+            console.log(item[i]);
+        }
+         */
+
+        // jQuery中的遍历
+        // 1. 遍历数组
+        var item = ['张三', '李四', '王五'];
+        /*
+        $.each(item, function (index, value) {
+            console.log(index + ": " + value);
+        })
+         */
+        $(item).each(function (index, value) {
+            console.log(index + ": " + value);
+        });
+
+        // 2. 遍历对象
+        var obj = {name: 'zzq', age: 27, intro: '死！'};
+        $.each(obj, function (key, value) {
+            console.log(key + ": " + value);
+        });
+
+        // 3. 遍历伪数组
+        // 伪数组, 不是数组, 本质是对象
+        // 有length属性
+        // 有length值-1属性
+        var fadeArr = {0:'张三', 1: 18, length: 2};
+        console.log(fadeArr);
+        // 不会遍历出length属性的值
+        $.each(fadeArr, function (index, value) {
+            console.log(index + ": " + value);
+        });
+        // 两种方式都可以
+        $(fadeArr).each(function (index, value) {
+            console.log(index + ": " + value);
+        });
+
+        // 4. 遍历节点
+        var $lis = $('li');
+        /*
+        $.each($lis, function (index, value) {
+            console.log(index + ": " + value);
+        });
+         */
+        $lis.each(function (index, value) {
+            $(this).slideUp(1000);
+            console.log(index + ": " + value);
+        })
+    });
+</script>
+
+</body>
+</html>
