@@ -18,6 +18,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1XnFXdG6Iq9fg3FRXA8rQMl2FJ5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -33,6 +39,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/上课/Day4_节点操作" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
@@ -75,6 +82,7 @@
       <workItem from="1582082554818" duration="181000" />
       <workItem from="1582904596912" duration="77000" />
       <workItem from="1582987737463" duration="17000" />
+      <workItem from="1583047031022" duration="105000" />
     </task>
     <servers />
   </component>
@@ -82,10 +90,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="268" y="54" width="1268" height="715" key="SettingsEditor" timestamp="1581678357684">
+    <state x="141" y="50" width="1268" height="715" key="SettingsEditor" timestamp="1583047117302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="268" y="54" width="1268" height="715" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581678357684" />
+    <state x="141" y="50" width="1268" height="715" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583047117302" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1581773592416">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
